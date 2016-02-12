@@ -48,6 +48,13 @@ sonar.host.url = http://ledszeppellin.sr.ifes.edu.br:9000<br>
 sonar.login = leds<br>
 sonar.password = ledssonar<br>
 <hr>
+Onde NOMEDOPROJETO será o nome do repositorio git e NOME DA PASTA COM O CODIGO a pasta onde estarão os arquivos de código do seu repositorio.
+
 Só dar commit e voltar no Travis e ver se tudo deu certo no log.
 
 ###Slack
+Logar no site do [Slack](https://slack.com/signin) como _leds.slack.com_ e clique continue, em seguida inserir seu login e senha do slack.
+Ao logar siga o [link](https://leds.slack.com/apps/manage) e em seguida serão configurados três aplicações: [GitHub](https://leds.slack.com/apps/manage/A0F7YS2SX-github), [TravisCI](https://leds.slack.com/apps/manage/A0F81FP4N-travis-ci) e [Taiga](https://leds.slack.com/apps/manage/A0F7XDUAZ-incoming-webhooks).
+
+Cada um dos links direciona para a página de configuração da respectiva aplicação.
+
