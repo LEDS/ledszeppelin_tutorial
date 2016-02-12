@@ -1,6 +1,6 @@
 # Leds Zeppelin
 ##Passo a Passo da integração com Travis/Sonar/Slack/Taiga
-###Adicionar arquivo _.travis.yml_
+###Travis CI
 Primeiro passo é criar o arquivo _.travis.yml_ dentro do repositorio do git.
 Em seguida editar esse arquivo para conter as seguintes informações:<br>
 <hr>
@@ -27,12 +27,27 @@ after_script:
  - ./sonar-runner-2.4/bin/sonar-runner
 
 <hr>
+No arquivo acima uma das informações requer o arquivo _requirements.txt_ esse arquivo é gerado com o comando `pip freeze > requirements.txt` e será salvo dentro da pasta do projeto. De push desse arquivo para a raiz do repositório, ele será exibido na mesma tela do arquivo_.travis.yml_.
 
-##Travis CI
-Logar no [Travis](https://travis-ci.org/) com a conta do LEDS para criar a conexão do repositorio git com o Travis.
+Em seguida logar no [Travis](https://travis-ci.org/) com a conta do LEDS para criar a conexão do repositorio git com o Travis.
 Ir em LEDS/Accounts e ativar seu repositório.
 Em seguida clicar na engrenagem de configurações e habilitar a opção _Build only if .travis.yml is present_.
 Para testar a conexão clique em _Build History_ sobre o icone da opção acima e de algum git push no seu diretorio.
 
-##Sonar
+###Sonar
+Crie o arquivo _sonar-project.properties_ dentro do repositorio do git.
+Em seguida, edite esse arquivo para conter as seguintes informações:<br>
+<hr>
+sonar.projectKey=NOMEDOPROJETO<br>
+sonar.projectName=NOMEDOPROJETO<br>
+sonar.projectVersion=1.0<br>
+sonar.sources=NOME DA PASTA COM O CODIGO<br>
+sonar.language=py<br>
+sonar.sourceEncoding=UTF-8<br>
+sonar.host.url = http://ledszeppellin.sr.ifes.edu.br:9000<br>
+sonar.login = leds<br>
+sonar.password = ledssonar<br>
+<hr>
+Só dar commit e voltar no Travis e ver se tudo deu certo no log.
 
+###Slack
