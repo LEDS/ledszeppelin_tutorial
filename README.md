@@ -56,5 +56,15 @@ Só dar commit e voltar no Travis e ver se tudo deu certo no log.
 Logar no site do [Slack](https://slack.com/signin) como _leds.slack.com_ e clique continue, em seguida inserir seu login e senha do slack.
 Ao logar siga o [link](https://leds.slack.com/apps/manage) e em seguida serão configurados três aplicações: [GitHub](https://leds.slack.com/apps/manage/A0F7YS2SX-github), [TravisCI](https://leds.slack.com/apps/manage/A0F81FP4N-travis-ci) e [Taiga](https://leds.slack.com/apps/manage/A0F7XDUAZ-incoming-webhooks).
 
-Cada um dos links direciona para a página de configuração da respectiva aplicação.
+Cada um dos links direciona para a página de configuração da respectiva aplicação. 
 
+OBS.: Todas as conexões abaixo deverão estar relacionadas ao mesmo canal do Slack, para que assim um unico canal reuna todas as informações sobre um determinado tópico que estará sendo trabalhado no TravisCi, no GitHub e no Taiga.
+
+####Slack+GitHub
+O primeiro passo é clicar em _Add Configuration_. Em seguida escolha o channel (ou canal) desejado e após escolhido o canal só clicar em _Add GitHub Integration_. Escolha o Repositorio do GitHub desejado em seguida. As informações abaixo de _Repositories_ devem ser preenchidas conforme desejar, entretanto pode-se utilizar o padrão. Portanto siga ao fim da tela e clique em _Save Integration_ e pronto.
+
+####Slack+TravisCI
+Assim como a integração acima, o primeiro passo é clicar em _Add Configuration_. Novamente escolha o c canal desejado e em seguida clique em _Add GitHub Integration_. O proximo passo é copiar as informações contidas em _Simple Notifications_. Essas informações deverão ser coladas no final do arquivo _.travis.yml_ no repositório em questão no GitHub. Basta salvar o arquivo e pronto.
+
+####Slack+Taiga
+Para integrar ao Taiga é um pouco diferente. Na primeira tela do Slack, no [link](https://leds.slack.com/apps/manage), ao lado de _Installed Apps_ tem a opção de _Custom Integrations_, clique nesta opção seguido por _Incoming WebHooks_. E então _Add Configuration_ e escolha o canal desejado. Na tela seguinte copie a URL em _WebHooks URL_ e salve a integração no fim da página. O próximo passo é abrir o taiga com permissão de administrador no projeto em questão. Clique sobre a engrenagem no menu a esquerda, seguido por _Plugins_ e _Slack_. E então cole a URL em _Slack WebHook URL_ e clique em test para testar a conexão com o Slack. E pronto.
